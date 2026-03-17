@@ -1,39 +1,41 @@
-# discord-bots
-A repo for Caius' Discord Bots
+<p align="center">
+  <img src="https://www.pngkey.com/png/full/18-186512_discord-png-graphic-library-library-discord-purple.png" alt="Discord Logo" width="150"/>
+  <h1 align="center">Discord Bots Collection</h1>
+  <h3 align="center">A modular multi-bot framework for fun, games, events & utilities on Discord</h3>
+</p>
 
-## Running The Thing:
-* Define your bot in the Discord Developer Portal https://discordapp.com/developers/applications/
-* Install the discord library https://discordpy.readthedocs.io/en/latest/intro.html#installing
-* Create your bot in the `/botfiles` directory 
-	* add a corresponding entry to `__init__.py`
-	* Add your bot to the `bots` Dictionary object in `main.py`
-* Create `secrets.txt` in root project directory, with entries formatted like `filename.py:BOT_CLIENT_SECRET` 
-	* You can find your bot's Client Secret in the "Bot" tab for your bot in the Developer Portal. If you don't see it click the irreversable "Build-A-Bot" button.
-	* `filename.py` should be a file inside the `botfiles` directory, e.g. `gyoshin.py`
-* Add your bot to a channel by visiting `https://discordapp.com/oauth2/authorize?&client_id=BOT_CLIENT_ID_HERE&scope=bot&permissions=0`
-* run `python3 main.py`
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/discord.py-2.0+-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="discord.py"/>
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status"/>
+  &nbsp;
+  <img src="https://img.shields.io/github/license/shiny1005/discord-bots?style=for-the-badge" alt="License"/>
+</p>
 
-discord.py API documentation: https://discordpy.readthedocs.io/
+<br/>
 
-## To Do
-* Use Bot/Command structure https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot
+## ✨ Features
 
-* Generic
-  * Need a better pattern for persisting data
-  * Regular expressions for command matching
-  * pass message to permissions checking function
-  	* i can't remember why this is to do but this might still be a good idea
-  * command pattern needs sub-commands
-  * better help message structure
-  * botCommands are mapped to lists of callbacks, not just one
-  * better namespacing for state in bot modules
-  * fix !roll command (semicolon bug and also the format just sucks)
-* Event
-  * Plus Ones
-* Test DND/TTRPG commands post-v2.0-migration
-* Test Captain/Teams/Ready commands
-* Logging
-  * Full logs saved to disk (?)
-  * Bots should self identify in print statements
-  * https://discordpy.readthedocs.io/en/stable/logging.html
-* Unit testing :scream:
+Modular bot system where each bot lives in its own file under `/botfiles/`
+
+- **Event & Game Bots** — Plus Ones, Captain/Teams/Ready checks, D&D/TTRPG commands
+- **Utility Commands** — Dice rolling (`!roll`), fun interactions, custom events
+- **Extensible** — Easy to add new bots/commands with minimal boilerplate
+- **Secrets Management** — Via `secrets.txt` for secure token handling
+- **Multi-bot Support** — Run several bots from one process
+
+
+<br/>
+
+
+## 🚀 Quick Start
+
+1. **Create your bot(s)** in the [Discord Developer Portal](https://discord.com/developers/applications)
+
+   <p align="center">
+     <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhf7gh98m4bu7x5iwztd9.png" alt="Discord Developer Portal screenshot" width="60%"/>
+   </p>
+
+2. **Install discord.py** (recommended: v2+)
+   ```bash
+   pip install -U discord.py
